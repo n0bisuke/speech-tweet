@@ -10,7 +10,7 @@ ds.on('send', (sended) => {
   console.log('受信:',sended);
   if(!sended.value.text) return;
 
-  tw.post('statuses/update', {status: sended.value.text}, (error, tweet, response) => {
+  tw.post('statuses/update', {status: `${sended.value.text} #bashauma`}, (error, tweet, response) => {
     if(error) throw error;
     console.log(tweet.text);  // Tweet body.
     // console.log(response);  // Raw response object.
